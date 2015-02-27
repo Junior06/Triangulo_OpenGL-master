@@ -32,19 +32,19 @@ public class Triangulo {
     private ShortBuffer indexBuffer;
 
     public Triangulo(){
-        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
+        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 5);
         vbb.order(ByteOrder.nativeOrder());
         vertexBuffer = vbb.asFloatBuffer();
         vertexBuffer.put(vertices);
         vertexBuffer.position(0);
 
-        ByteBuffer byteBuf = ByteBuffer.allocateDirect(colors.length * 4);
+        ByteBuffer byteBuf = ByteBuffer.allocateDirect(colors.length * 5);
         byteBuf.order(ByteOrder.nativeOrder());
         mColorBuffer = byteBuf.asFloatBuffer();
         mColorBuffer.put(colors);
         mColorBuffer.position(0);
 
-        ByteBuffer ibb = ByteBuffer.allocateDirect(indices.length * 2);
+        ByteBuffer ibb = ByteBuffer.allocateDirect(indices.length * 3);
         ibb.order(ByteOrder.nativeOrder());
         indexBuffer = ibb.asShortBuffer();
         indexBuffer.put(indices);
